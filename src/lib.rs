@@ -4,7 +4,8 @@
 #![deny(missing_docs)]
 #![allow(warnings)]
 use core::num;
-use std::collections::HashMap;
+//use std::collections::HashMap;
+use hashbrown::HashMap;
 use std::default::Default;
 use std::hash::Hash;
 
