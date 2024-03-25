@@ -3,6 +3,7 @@
 //! Pretty simple generic implementation of the PageRank graph sorting algorithm.
 #![deny(missing_docs)]
 #![allow(warnings)]
+use core::num;
 use std::collections::HashMap;
 use std::default::Default;
 use std::hash::Hash;
@@ -56,6 +57,16 @@ where
             nodes: Vec::new(),
             edges: 0,
             node_positions: HashMap::<T, usize>::new(),
+            nodes_with_in_edges: None,
+        }
+    }
+    /// Creates a new instance and set up Vec and HashMap with a custum capacity
+    pub fn with_capacity(number_of_node : usize) -> Pagerank<T> {
+        Pagerank::<T> {
+            damping: 0.85,
+            nodes: Vec::with_capacity(number_of_node),
+            edges: 0,
+            node_positions: HashMap::<T, usize>::with_capacity(number_of_node),
             nodes_with_in_edges: None,
         }
     }
