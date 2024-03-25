@@ -86,9 +86,9 @@ where
     }
 
     /// Adds an node between two nodes
-    pub fn add_edge(&mut self, source: usize, target: usize) {
-        self.nodes[source].out_edges += 1;
-        self.nodes[target].in_edges.push(source);
+    pub fn add_edge(&mut self, source: u32, target: u32) {
+        self.nodes[source as usize].out_edges += 1;
+        self.nodes[target as usize].in_edges.push(source as usize);
         self.edges += 1;
     }
     /// Adds an node
