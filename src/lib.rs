@@ -92,6 +92,10 @@ where
         self.nodes[target].in_edges.push(source);
         self.edges += 1;
     }
+    /// Adds an node
+    pub fn add_node(&mut self, source: T) {
+        let source = self.get_or_create_node(source);
+    }
 
     /// Returns the current score of a gien node
     pub fn get_score(&self, node: T) -> Option<f64> {
